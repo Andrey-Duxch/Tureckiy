@@ -1,0 +1,13 @@
+import math
+x1 = float(input("x1="))
+x2 = float(input("x2="))
+y1 = float(input("y1="))
+y2 = float(input("y2="))
+z1 = float(input("z1="))
+z2 = float(input("z2="))
+dla = math.sqrt(((x2-x1)**2)+((y2-y1)**2))
+dlb = math.sqrt(((x2-x1)**2)+((z2-z1)**2))
+dlc = math.sqrt(((y2-y1)**2)+((z2-z1)**2))
+print("Длина отрезка a =", dla)
+print("Длина отрезка b =", dlb)
+print("Длина отрезка с =", dlc)
