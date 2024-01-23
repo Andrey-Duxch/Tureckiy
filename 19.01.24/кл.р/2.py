@@ -1,4 +1,6 @@
-a, b = [int (i) for i in input("Введите два целых числа").split()]
+a, b = [int(i) for i in input("Введите два целых числа:\n").split()]
+d = a
+e = b
 c = 0
 while b != 0:
     if b > 0:
@@ -7,6 +9,4 @@ while b != 0:
     else:
         c -= a
         b += 1
-print(c)
-
-
+print(f"{d} * {e} = {c}")
