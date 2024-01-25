@@ -1,11 +1,10 @@
 n = int(input("Введите натуральное число:"))
-p = int(input())
+p = int(input("Введите целое число:"))
 s = 0
 for i in range(n):
-    bi = int(input("" + str(i + 1) ))
+    bi = int(input("Введите целое число b" + str(i + 1) + ":"))
     s += bi
 if s < p:
     print("Верно")
 else:
-    print("неверно")
-
+    print("Неверно")

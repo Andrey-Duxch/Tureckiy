@@ -10,4 +10,3 @@ if 0 < n < 27:
         if s == n:
             k += 1
 print(k)
-
