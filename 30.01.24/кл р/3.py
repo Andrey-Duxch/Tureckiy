@@ -1,9 +1,12 @@
 n = int(input("Введите N:"))
-result = []
 for i in range(1, n+1):
-    a = [int(d) for d in str(i)]
-    if all(b != 0 and i % b == 0 for b in a):
-        result.append(i)
+    a = i
+    while a > 0:
+        b = a % 10
+        a //= 10
+        if b == 0 or i % b != 0:
+            break
+    else:
         print(i, end=" ")
 
 

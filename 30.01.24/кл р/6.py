@@ -9,4 +9,3 @@ def a(m, n):
     return b
 r = a(m, n)
 print("Найденные числа:", r)
-
