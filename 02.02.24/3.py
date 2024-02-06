@@ -15,7 +15,7 @@ def a(n):
         elif n - 100 >= 0:
             print("C", end="")
             n -= 100
-        elif -10 < (n - 100) < 0:
+        elif -10 <= (n - 100) < 0:
             print("XC", end="")
             n -= 90
         elif n - 50 >= 0:
