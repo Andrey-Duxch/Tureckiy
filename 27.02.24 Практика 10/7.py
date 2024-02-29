@@ -1,10 +1,10 @@
-def prime_factors(n, divisor=2):
+def f(n, d=2):
     if n == 1:
         return []
-    if n % divisor == 0:
-        return [divisor] + prime_factors(n // divisor, divisor)
+    if n % d == 0:
+        return [d] + f(n // d, d)
     else:
-        return prime_factors(n, divisor + 1)
-number = int(input("Введите число: "))
-factors = prime_factors(number)
-print(f"Простые сомножители числа {number}:", factors)
+        return f(n, d + 1)
+n = int(input("Введите натуральное число:\n"))
+c = "*".join(map(str, f(n)))
+print(f"{n} =", c)

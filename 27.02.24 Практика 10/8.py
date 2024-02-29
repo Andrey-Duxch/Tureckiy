@@ -1,11 +1,9 @@
-def count_ways(n, start=1):
+def f(n, d=1):
     if n == 0:
         return 1
-    res = 0
-    for i in range(start, n +1):
-        res += count_ways(n-i, i)
-    return res
-
-n = int(input("Введите натуральное число: "))
-ways = count_ways(n)
-print("Количество разложений:", ways)
+    b = 0
+    for i in range(d, n + 1):
+        b += f(n-i, i)
+    return b
+n = int(input("Введите натуральное число:\n"))
+print("Количество разложений:", f(n)-1)
