@@ -6,7 +6,7 @@ def f(n):
     elif n > 0 and n % 2 != 0:
         return f(n//8)
 k = 0
-for i in range(8**8, 8**9+1):
-    if f(i) == 2:
+for n in range(8**9, 8**10+1):
+    if f(n) == 2:
         k += 1
 print(k)
