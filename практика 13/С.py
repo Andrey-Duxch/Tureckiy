@@ -6,9 +6,13 @@ def f(n):
         if n % i == 0:
             return False
     return True
-n = int(input("Введите количество элементов:\n "))
-A = [randint(2,100) for _ in range(n)]
+n = int(input("Введите количество элементов:\n"))
+A = [randint(2, 100) for _ in range(n)]
 print(f'Массив:\n{" ".join(str(i) for i in A)}')
 s = sum(i for i in A if f(i))
+p = [i for i in A if f(i)]
 k = sum(1 for i in A if f(i))
-print(s/k)
+sr = None if k == 0 else s/k
+print(f'Простые числа:\n{" ".join(str(i) for i in p)}')
+print(f"Среднее арифметическое: {sr}")
+
