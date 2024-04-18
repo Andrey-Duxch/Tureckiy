@@ -1,10 +1,9 @@
 s = input("Введите строку:")
-f = False
+n = s.split()
 c = 0
-for i in range(len(s)):
-    if s[i] != " " and not (f):
-        c += 1
-        f = True
-    elif s[i] == " ":
-        f = False
-print(f'Самое длинное слово:, длина {c}')
+b = ""
+for i in range(len(n)):
+    if len(n[i]) > c:
+        c = len(n[i])
+        b = n[i]
+print(f'Самое длинное слово: {b}, длина {c}')
