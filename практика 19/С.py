@@ -1,22 +1,22 @@
-def A(n):
-    rom = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
-    r = " "
-    i = 0
-    while i < len(n):
-        if i < len(n) - 1 and n[i] in rom and n[i+1] in rom:
-            if rom[n[i]] < rom[n[i+1]]:
-                r += str(rom[n[i+1]]) - rom[n[i]]
-                i +=2
-            else:
-                r += str(rom[n[i]])
-                i+=1
+def A(s):
+    r = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    b = 0
+    d = 0
+    for i in s:
+        c = r[i]
+        if c > d:
+            b += c - 2 * d
         else:
-            if n[i] in rom:
-                r += str(rom[n[i]])
-                i +=1
-            else:
-                r += n[i]
-    return r
-n = "В MMXIII году в школе CXXIII состоялся очередной выпуск XI классов."
-d =A(n)
-print(d)
+            b += c
+        d = c
+    return b
+def B(s):
+    import re
+    s1 = r'[IVXLCDM]+'
+    num = re.findall(s1, s)
+    for i in num:
+        d = A(i)
+        s = s.replace(i, str(d))
+    return s
+s = input("")
+print(B(s))
