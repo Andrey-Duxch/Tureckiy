@@ -9,6 +9,7 @@ def A(s):
                 num = num * 10 + int(s[i])
                 i += 1
             n.append(num)
+
         elif s[i] == '(':
             k.append(s[i])
             i += 1
