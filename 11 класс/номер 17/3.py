@@ -1,6 +1,12 @@
 num = [int(i) for i in open('input3.txt')]
-max_39 = (max([i for i in num if abs(i) % 100 == 39]))**2
-print(max_39)
-num_output = [(num[i], num[i+1]) for i in range(0, len(num) - 1) if [len(str(abs(num[i]))), len(str(abs(num[i+1])))].count(4) == 1 and (sum((num[i], num[i+1])))**2 <= max_39]
-max_sum = max(sum(x) for x in num_output)
-print(len(num_output), max_sum)
+max_39 = max([x for x in num if 1000 <= abs(x) <= 9999 and str(abs(x)).endswith('39')])
+max_392 = max_39**2
+count = 0
+max_sum = float('-inf')
+for i in range(len(num)-1):
+    a, b = num[i], num[i + 1]
+    digit_4 = (1000 <= abs(a) <= 9999) != (1000 <= abs(b) <= 9999)
+    if digit_4 and (a + b)**2 <= max_392:
+        count  += 1
+        max_sum = max(max_sum, a+b)
+print(count, max_sum)
